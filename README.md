@@ -66,7 +66,7 @@ This app uses TheSportsDB, a free and public sports API.
 
 ### ⚠️ Avoid API errors (like CORS or rate limits)
 
-- TheSportsDB has usage limits on free accounts (1 request per second max is recommended)
+- https://www.thesportsdb.com/documentation has usage limits on free accounts (1 request per second max is recommended)
 - This project is optimized to only call the API on search, not on every keystroke
 - If you experience CORS issues while hosting, consider adding a proxy server or deploying on trusted domains (like Vercel or Netlify)
 
