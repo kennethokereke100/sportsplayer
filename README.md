@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Sports Player Lookup App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Search for athletes and view their status, sport, and position in real-time.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+- **React** (with [Vite](https://vitejs.dev)) for fast frontend development
+- **TailwindCSS** for modern and responsive styling
+- **TypeScript** for type safety
+- **TheSportsDB API** for free sports player data
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📸 UI Features
 
-## Expanding the ESLint configuration
+- Clean dropdown suggestions as you type
+- Accurate result filtering (e.g. only shows "LeBron James" when typed fully)
+- Responsive player cards
+- Fully mobile and desktop friendly
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Setup Instructions
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 1. Clone the repository
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/your-username/sports-player-lookup.git
+cd sports-player-lookup
+```
+### 2. Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Start the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Your app will be live at http://localhost:5173 (or whatever Vite shows).
+
+🎨 TailwindCSS Setup (already included)
+
+If you're editing or extending the app, Tailwind is already configured with:
+
+- tailwind.config.js
+
+- postcss.config.js
+
+- index.css with Tailwind's base, components, and utilities.
+
+Make sure to import index.css in your main src/main.tsx file:
+
+```bash
+import './index.css';
+```
+### Tailwind should work out-of-the-box, no extra setup needed.
+
+### ⚽ API Usage — TheSportsDB
+This app uses TheSportsDB, a free and public sports API.
+
+### No API key required for basic use:
+
+- You can search players by name
+- View basic data like sport, team, position, and status
+
+### ⚠️ Avoid API errors (like CORS or rate limits)
+
+- TheSportsDB has usage limits on free accounts (1 request per second max is recommended)
+- This project is optimized to only call the API on search, not on every keystroke
+- If you experience CORS issues while hosting, consider adding a proxy server or deploying on trusted domains (like Vercel or Netlify)
+
+### ✅ Next Steps
+
+Once you're happy with the app:
+- Push it to GitHub
